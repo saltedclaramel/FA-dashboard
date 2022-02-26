@@ -8,12 +8,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
           <Fragment>
-            <Sidebar/>
-            <Routes/>
+            <header className="App-header">
+              <Sidebar/>
+              <Routes/>
+            </header>
           </Fragment>
-        </header>
       </div>
     )
   }
