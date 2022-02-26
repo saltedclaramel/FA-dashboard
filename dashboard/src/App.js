@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
+import "./App.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Nav } from 'react-bootstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+        <Nav defaultActiveKey="/home" className="flex-column sidebar" bg="dark">
+            <h1 className="pdt-name">SMARTFOLIO</h1>
+            <Nav.Link href="/" active>Add an investor</Nav.Link>
+            <Nav.Link eventKey="link-1">View all profiles</Nav.Link>
+            <Nav.Link eventKey="link-2">View model</Nav.Link>
+          </Nav>
+          <div className="main-body">
+            hi
+          </div>
+        </header>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
