@@ -1,26 +1,22 @@
-import React, { Component } from "react"
-import "./App.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav } from 'react-bootstrap';
+import { withRouter } from 'react-router-dom';
+import Routes from './routes.js';
+import React, { Component, Fragment } from 'react';
+import './App.css';
+import Sidebar from './nav/Sidebar';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-        <Nav defaultActiveKey="/home" className="flex-column sidebar" bg="dark">
-            <h1 className="pdt-name">SMARTFOLIO</h1>
-            <Nav.Link href="/" active>Add an investor</Nav.Link>
-            <Nav.Link eventKey="link-1">View all profiles</Nav.Link>
-            <Nav.Link eventKey="link-2">View model</Nav.Link>
-          </Nav>
-          <div className="main-body">
-            hi
-          </div>
+          <Fragment>
+            <Sidebar/>
+            <Routes/>
+          </Fragment>
         </header>
       </div>
     )
   }
 }
 
-export default App
+export default withRouter(App);
