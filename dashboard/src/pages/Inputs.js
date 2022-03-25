@@ -3,7 +3,6 @@ import "react-step-progress-bar/styles.css";
 import ProgressBarComponent from "./ProgressBarComponent";
 import "../App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form } from "react-bootstrap";
 
 class Inputs extends Component{
     continue = e => {
