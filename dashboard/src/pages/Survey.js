@@ -14,9 +14,9 @@ class Survey extends Component{
     }
     render(){
         return(
-            <div className="user-input">
+            <div className="investor-page-layout">
                 <ProgressBarComponent percentage={65} style={{marginTop: 10}}/>
-                <div className="form-basic-info">
+                <div className="user-input">
                     <center>
                         Risk Profiling Survey page
                     </center>

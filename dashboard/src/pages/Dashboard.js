@@ -10,9 +10,9 @@ class Dashboard extends Component{
     }
     render(){
         return(
-            <div className="user-input">
+            <div className="investor-page-layout">
                 <ProgressBarComponent percentage={100} style={{marginTop: 10}}/>
-                <div className="form-basic-info">
+                <div className="user-input">
                     <center>
                         Dashboard page
                     </center>

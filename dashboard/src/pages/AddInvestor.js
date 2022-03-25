@@ -6,7 +6,9 @@ import Dashboard from "./Dashboard";
 
 class AddInvestor extends Component{
     state = {
-        step: 1
+        step: 1,
+        investor_name: "",
+        investor_mobile: "",
     }
         //go to next step
         nextStep = () => {

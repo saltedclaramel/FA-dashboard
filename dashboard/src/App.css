@@ -39,14 +39,23 @@
   padding: 5%;
 }
 
-.user-input{
+.investor-page-layout{
   display: grid;
   grid-template-rows: 1fr 3fr;
-  margin: 8% 17%;
+  margin: 10% 17%;
 }
 
-.form-basic-info{
-  margin: 5%;
-  display: grid;
-  grid-template-rows: 1fr 3fr;
+.user-input1{
+  margin: 5% 3%;
 }
+.user-input2{
+  margin: -4% 3%;
+}
+
+.form-label, .form-check-label {
+  float: left;
+}
+
+/* .form-check-label{
+  float: left;
+} */
