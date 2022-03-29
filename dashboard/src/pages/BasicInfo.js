@@ -11,9 +11,9 @@ class BasicInfo extends Component{
         this.props.nextStep();
     }
 
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
     render(){
         const { values } = this.props;
         // console.log(values.name)

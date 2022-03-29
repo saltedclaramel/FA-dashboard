@@ -13,9 +13,9 @@ class Inputs extends Component{
         e.preventDefault();
         this.props.previousStep();
     }
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
     render(){
         const { values } = this.props;
         const time_horizon_options = ['Less than 3 years', '3-5 years', '6-10 years', 'More than 10 years']

@@ -12,11 +12,11 @@ class Survey extends Component{
         e.preventDefault();
         this.props.previousStep();
     }
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
     render(){
-        const { values } = this.props;
+        // const { values } = this.props;
         const questions = [
             {
                 qn: "Investor's understanding of stocks, bonds, ETFs",
