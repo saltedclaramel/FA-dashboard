@@ -7,8 +7,8 @@ import Dashboard from "./Dashboard";
 class AddInvestor extends Component{
     state = {
         step: 1,
-        investor_name: "",
-        investor_mobile: "",
+        name: "",
+        mobile: "",
     }
         //go to next step
         nextStep = () => {
@@ -24,12 +24,10 @@ class AddInvestor extends Component{
                 step: step - 1
             });
         }
-        scrollToTop() {
-            window.scrollTo({
-              top: 350,
-              behavior: "smooth"
-            });
-          }
+        // Handle fields change
+        // handleChange = input => e => {
+        //     this.setState({[input]: e.target.value})
+        // }
     render(){
         const { step } = this.state;
         // eslint-disable-next-line

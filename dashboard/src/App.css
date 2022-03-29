@@ -1,13 +1,9 @@
-/* .App {
-  text-align: center;
-} */
-
 .App-header {
   background-color: #191B27;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 5fr;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 2vmin);
   color: white;
 }
 
@@ -52,10 +48,19 @@
   margin: -4% 3%;
 }
 
-.form-label, .form-check-label {
-  float: left;
+.user-input3{
+  margin: -25% 3% 0 3%;
+
 }
 
-/* .form-check-label{
+.form-label{
   float: left;
-} */
+  text-align: left;
+  font-weight: 500;
+}
+
+.form-check-label {
+  float: left;
+  text-align: left;
+  font-weight: 390;
+}

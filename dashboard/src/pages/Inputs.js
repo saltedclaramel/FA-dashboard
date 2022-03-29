@@ -21,20 +21,14 @@ class Inputs extends Component{
                 <ProgressBarComponent percentage={35} style={{marginTop: 10}}/>
                 <div className="user-input2">
                     <center>
-                        <div class="form-label">Investor's Time Horizon</div><br/><br/>     
-                        <div style={{'marginTop': -25, 'marginBottom': 30}}>
-                            {time_horizon_options.map((option) => (
-                                <div className="mb-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name={ option } id={ option }/>
-                                        <label class="form-check-label" for={ option }>
-                                            { option }
-                                        </label>
-                                    </div>
-                                </div>
-                            ))}
+                        <div class="mb-3">
+                            <label for="investor_capital" class="form-label">Investor's Capital</label>
+                            <input type="text" class="form-control" id="investor_capital"/>
                         </div>
-                        
+                        <div class="mb-3">
+                            <label for="investor_quantitative_goal" class="form-label">Investor's Quantitative Goal</label>
+                            <input type="text" class="form-control" id="investor_quantitative_goal"/>
+                        </div>
                         <div class="mb-3">
                             <label for="investor_qualitative_goal" class="form-label">Investor's Qualitative Goal</label>
                             <select class="form-select">
@@ -49,9 +43,18 @@ class Inputs extends Component{
                             <label for="investor_monthly_contribution" class="form-label">Investor's Expected Contribution (monthly)</label>
                             <input type="text" class="form-control" id="investor_monthly_contribution"/>
                         </div>
-                        <div class="mb-3">
-                            <label for="investor_capital" class="form-label">Investor's Capital</label>
-                            <input type="text" class="form-control" id="investor_capital"/>
+                        <div class="form-label">Investor's Time Horizon</div><br/><br/>     
+                        <div style={{'marginTop': -20, 'marginBottom': 30}}>
+                            {time_horizon_options.map((option) => (
+                                <div className="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_options" id={ option }/>
+                                        <label class="form-check-label" for={ option }>
+                                            { option }
+                                        </label>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </center>
                     <div>
