@@ -15,7 +15,13 @@ class Inputs extends Component{
     }
     // constructor(props){
     //     super(props);
+    //     this.onValueChange = this.onValueChange.bind(this)
     // }
+    // onValueChange(event) {
+    //     this.setState({
+    //       selectedOption: event.target.value
+    //     });
+    //   }
     render(){
         const { values } = this.props;
         const time_horizon_options = ['Less than 3 years', '3-5 years', '6-10 years', 'More than 10 years']
@@ -41,7 +47,6 @@ class Inputs extends Component{
                         <div class="mb-3">
                             <label for="investor_qualitative_goal" class="form-label">Investor's Qualitative Goal</label>
                             <select class="form-select" value={ values.qualitative } onChange={ this.props.handleChange('qualitative') }>
-                                <option selected disabled="disabled">---</option>
                                 { qualitative_goals_options.map((q_goal) => (
                                     <option value={q_goal} >{q_goal}</option>
                                 )) }
@@ -53,11 +58,19 @@ class Inputs extends Component{
                             <input type="text" class="form-control" id="investor_monthly_contribution" value={ values.contribution } onChange={ this.props.handleChange('contribution') }/>
                         </div>
                         <div class="form-label">Investor's Time Horizon</div><br/><br/>     
-                        <div style={{'marginTop': -20, 'marginBottom': 30}}>
+                        <div style={{'marginTop': -15, 'marginBottom': 30}}>
                             {time_horizon_options.map((option) => (
                                 <div className="mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio_options" id={ option } value={ option } onChange={ this.props.handleChange('time_horizon') }/>
+                                        <input 
+                                            class="form-check-input" 
+                                            type="radio" 
+                                            name="radio_options" 
+                                            id={ option } 
+                                            value={ option } 
+                                            checked={ values.time_horizon === option }
+                                            onChange={ this.props.handleChange('time_horizon') }
+                                        />
                                         <label class="form-check-label" for={ option }>
                                             { option }
                                         </label>

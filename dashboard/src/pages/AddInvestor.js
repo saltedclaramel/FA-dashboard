@@ -11,7 +11,7 @@ class AddInvestor extends Component{
         mobile: "",
         capital: "",
         quantitative: "",
-        qualitative: "",
+        qualitative: "Prepare for retirement",
         contribution: "",
         time_horizon: null,
         understanding: null,

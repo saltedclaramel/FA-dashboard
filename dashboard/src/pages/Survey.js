@@ -16,7 +16,7 @@ class Survey extends Component{
     //     super(props);
     // }
     render(){
-        // const { values } = this.props;
+        const { values } = this.props;
         const questions = [
             {
                 qn: "Investor's understanding of stocks, bonds, ETFs",
@@ -81,7 +81,14 @@ class Survey extends Component{
                             { question['options'].map((option) => (
                                 <div className="m-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name={ question['qnName'] } id={ option } value={ option } onChange={ this.props.handleChange(question['qnName']) }/>
+                                        <input 
+                                            class="form-check-input" 
+                                            type="radio" 
+                                            name={ question['qnName'] } 
+                                            id={ option } 
+                                            value={ option } 
+                                            checked={ values[question['qnName']] === option }
+                                            onChange={ this.props.handleChange(question['qnName']) }/>
                                         <label class="form-check-label" for={ option }>
                                             { option }
                                         </label>
