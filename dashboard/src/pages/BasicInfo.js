@@ -10,7 +10,14 @@ class BasicInfo extends Component{
         e.preventDefault();
         this.props.nextStep();
     }
+
+    constructor(props){
+        super(props);
+    }
     render(){
+        const { values } = this.props;
+        // console.log(values.name)
+        // console.log(values.mobile)
         return(
             <div className="investor-page-layout">
                 <ProgressBarComponent percentage={0} style={{marginTop: 10}}/>
@@ -18,11 +25,11 @@ class BasicInfo extends Component{
                     <center>
                         <div class="mb-3">
                             <label for="investor_name" class="form-label">Investor's Name</label>
-                            <input type="text" class="form-control" id="investor_name"/>
+                            <input type="text" class="form-control" id="investor_name" value={ values.name } onChange={ this.props.handleChange('name') }/>
                         </div>
                         <div class="mb-3">
                             <label for="investor_mobile" class="form-label">Investor's Mobile No.</label>
-                            <input type="text" class="form-control" id="investor_mobile"/>
+                            <input type="text" class="form-control" id="investor_mobile" value={ values.mobile } onChange={ this.props.handleChange('mobile') }/>
                         </div>
                     </center>
                     <div>

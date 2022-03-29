@@ -12,7 +12,11 @@ class Survey extends Component{
         e.preventDefault();
         this.props.previousStep();
     }
+    constructor(props){
+        super(props);
+    }
     render(){
+        const { values } = this.props;
         const questions = [
             {
                 qn: "Investor's understanding of stocks, bonds, ETFs",
@@ -61,7 +65,11 @@ class Survey extends Component{
                 qnName: "outcome"
             }
         ]
-
+        // console.log(values.understanding)
+        // console.log(values.thought)
+        // console.log(values.reaction)
+        // console.log(values.approach)
+        // console.log(values.outcome)
         return(
             <div className="investor-page-layout">
                 <ProgressBarComponent percentage={65} style={{marginTop: 10}}/>
@@ -73,7 +81,7 @@ class Survey extends Component{
                             { question['options'].map((option) => (
                                 <div className="m-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name={ question['qnName'] } id={ option }/>
+                                        <input class="form-check-input" type="radio" name={ question['qnName'] } id={ option } value={ option } onChange={ this.props.handleChange(question['qnName']) }/>
                                         <label class="form-check-label" for={ option }>
                                             { option }
                                         </label>

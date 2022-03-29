@@ -9,6 +9,16 @@ class AddInvestor extends Component{
         step: 1,
         name: "",
         mobile: "",
+        capital: "",
+        quantitative: "",
+        qualitative: "",
+        contribution: "",
+        time_horizon: null,
+        understanding: null,
+        thought: null,
+        reaction: null,
+        approach: null,
+        outcome: null
     }
         //go to next step
         nextStep = () => {
@@ -25,46 +35,58 @@ class AddInvestor extends Component{
             });
         }
         // Handle fields change
-        // handleChange = input => e => {
-        //     this.setState({[input]: e.target.value})
-        // }
+        handleChange = input => e => {
+            this.setState({[input]: e.target.value})
+        }
     render(){
-        const { step } = this.state;
+        // destructuring
+        const { step, name, mobile, capital, quantitative, qualitative, contribution, time_horizon, understanding, thought, reaction, approach, outcome } = this.state;
+        const values = { name, mobile, capital, quantitative, qualitative, contribution, time_horizon, understanding, thought, reaction, approach, outcome }
         // eslint-disable-next-line
         switch(step){
             case 1:
                 return(
-                    <div onClick={() => this.scrollToTop()}>
-                        <BasicInfo nextStep= { this.nextStep }/>
+                    <div>
+                        <BasicInfo 
+                            nextStep = { this.nextStep }
+                            handleChange = { this.handleChange }
+                            values = { values }
+                        />
                     </div>
                 )
             case 2:
                 return(
-                    <div onClick={() => this.scrollToTop()}>
+                    <div>
                         <Inputs 
                             previousStep = { this.previousStep }
                             nextStep= { this.nextStep }
+                            handleChange = { this.handleChange }
+                            values = { values }
                         />
                     </div>
 
                 )
             case 3:
                 return(
-                    <div onClick={() => this.scrollToTop()}>
+                    <div>
                         <Survey
                             previousStep = { this.previousStep }
                             nextStep= { this.nextStep }
+                            handleChange = { this.handleChange }
+                            values = { values }
                         />
                     </div>
                 )
             case 4:
                 return(
-                    <div onClick={() => this.scrollToTop()}>
+                    <div>
                         <Dashboard
                             previousStep = { this.previousStep }
                         />
                     </div>
                 )    
+            default:
+                // do nothing
         }
    
     }
