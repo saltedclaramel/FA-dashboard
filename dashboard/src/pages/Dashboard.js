@@ -43,7 +43,7 @@ class Dashboard extends Component{
                                 <Col lg="8" sm="12">
                                     <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
-                                            <h6>Investor Risk Profile</h6>
+                                            <h6>OPTIMAL PORTFOLIO MODEL</h6>
                                             <p></p>
                                         </Card.Body>
                                     </Card>
