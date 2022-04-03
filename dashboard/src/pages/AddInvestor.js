@@ -83,7 +83,7 @@ class AddInvestor extends Component{
                 return(
                     <div>
                         <Dashboard
-                            previousStep = { this.previousStep }
+                            values = { values }
                         />
                     </div>
                 )    
