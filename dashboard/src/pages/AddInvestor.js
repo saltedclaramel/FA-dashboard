@@ -12,15 +12,15 @@ class AddInvestor extends Component{
         capital: "",
         quantitative: "",
         qualitative: "Prepare for retirement",
-        contribution: null,
-        time_horizon: null,
-        understanding: null,
-        thought: null,
-        reaction: null,
-        approach: null,
-        outcome: null,
-        annual_income: null,
-        stability: null
+        contribution: "",
+        time_horizon: "",
+        understanding: "",
+        thought: "",
+        reaction: "",
+        approach: "",
+        outcome: "",
+        annual_income: "",
+        stability: ""
     }
         //go to next step
         nextStep = () => {

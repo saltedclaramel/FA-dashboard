@@ -5,8 +5,30 @@ import "../App.css";
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 class Dashboard extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            chosen_model: "",
+            feasibility: "",
+            risk_profile: "",
+            amt_to_invest: ""
+        }
+
+    }
+    componentDidMount(){
+        fetch('http://127.0.0.1:5000/backend/' + this.props.values.understanding + '/' + this.props.values.thought + '/' + this.props.values.reaction + '/' + this.props.values.approach + '/' + this.props.values.outcome + '/' + this.props.values.annual_income + '/' + this.props.values.qualitative + '/' + this.props.values.stability + '/' + this.props.values.time_horizon +'/' + this.props.values.contribution + '/' + this.props.values.capital + '/' + this.props.values.quantitative)
+        .then(res => res.json())
+        .then(result => {
+            this.setState({
+                chosen_model: result.data['chosen_model'],
+                feasibility: result.data['feasibility'],
+                risk_profile: result.data['risk_profile'],
+                amt_to_invest: result.data['amt_to_invest']
+            })
+        })
+    }
     render(){
-        const { values } = this.props;
+    const { values } = this.props;
         return(
             <div className="investor-page-layout">
                 <ProgressBarComponent percentage={100} style={{marginTop: 10}}/>
@@ -26,7 +48,7 @@ class Dashboard extends Component{
                                     <Card style={{ backgroundColor: '#2C2F42', height: '11em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
                                             <h6>Investor Risk Profile</h6>
-                                            <p></p>
+                                            <p>{ this.state.risk_profile }</p>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -34,7 +56,7 @@ class Dashboard extends Component{
                                     <Card style={{ backgroundColor: '#2C2F42', height: '11em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
                                             <h6>Feasibility of attaining investor goal</h6>
-                                            <p></p>
+                                            <p>{ this.state.feasibility }</p>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -44,7 +66,7 @@ class Dashboard extends Component{
                                     <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
                                             <h6>OPTIMAL PORTFOLIO MODEL</h6>
-                                            <p></p>
+                                            <p>{ this.state.chosen_model }</p>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -52,7 +74,7 @@ class Dashboard extends Component{
                                     <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
                                             <h6>Amount to invest each month to reach financial goal</h6>
-                                            <p></p>
+                                            <p>{ this.state.amt_to_invest }</p>
                                         </Card.Body>
                                     </Card>
                                 </Col>
