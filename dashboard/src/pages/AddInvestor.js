@@ -12,13 +12,15 @@ class AddInvestor extends Component{
         capital: "",
         quantitative: "",
         qualitative: "Prepare for retirement",
-        contribution: "",
+        contribution: null,
         time_horizon: null,
         understanding: null,
         thought: null,
         reaction: null,
         approach: null,
-        outcome: null
+        outcome: null,
+        annual_income: null,
+        stability: null
     }
         //go to next step
         nextStep = () => {
@@ -40,8 +42,8 @@ class AddInvestor extends Component{
         }
     render(){
         // destructuring
-        const { step, name, mobile, capital, quantitative, qualitative, contribution, time_horizon, understanding, thought, reaction, approach, outcome } = this.state;
-        const values = { name, mobile, capital, quantitative, qualitative, contribution, time_horizon, understanding, thought, reaction, approach, outcome }
+        const { step, name, mobile, capital, quantitative, qualitative, contribution, time_horizon, understanding, thought, reaction, approach, outcome, annual_income, stability } = this.state;
+        const values = { name, mobile, capital, quantitative, qualitative, contribution, time_horizon, understanding, thought, reaction, approach, outcome, annual_income, stability }
         // eslint-disable-next-line
         switch(step){
             case 1:
