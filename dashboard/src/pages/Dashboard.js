@@ -17,7 +17,7 @@ class Dashboard extends Component{
                                 <Col lg="4" sm="6">
                                     <Card style={{ backgroundColor: '#2C2F42', height: '11em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
-                                            <h5>{ values.name }'s Dashboard</h5>
+                                            <h6>{ values.name }'s Dashboard</h6>
                                             <p>{ values.mobile }</p>
                                         </Card.Body>
                                     </Card>
@@ -25,7 +25,7 @@ class Dashboard extends Component{
                                 <Col lg="4" sm="6">
                                     <Card style={{ backgroundColor: '#2C2F42', height: '11em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
-                                            <h5>Investor Risk Profile</h5>
+                                            <h6>Investor Risk Profile</h6>
                                             <p></p>
                                         </Card.Body>
                                     </Card>
@@ -33,7 +33,7 @@ class Dashboard extends Component{
                                 <Col lg="4" sm="6">
                                     <Card style={{ backgroundColor: '#2C2F42', height: '11em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
-                                            <h5>Feasibility of attaining investor goal</h5>
+                                            <h6>Feasibility of attaining investor goal</h6>
                                             <p></p>
                                         </Card.Body>
                                     </Card>
@@ -43,7 +43,7 @@ class Dashboard extends Component{
                                 <Col lg="8" sm="12">
                                     <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
-                                            <h5>Investor Risk Profile</h5>
+                                            <h6>Investor Risk Profile</h6>
                                             <p></p>
                                         </Card.Body>
                                     </Card>
@@ -51,7 +51,7 @@ class Dashboard extends Component{
                                 <Col lg="4" sm="12">
                                     <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
-                                            <h5>Amount to invest each month to reach financial goal</h5>
+                                            <h6>Amount to invest each month to reach financial goal</h6>
                                             <p></p>
                                         </Card.Body>
                                     </Card>
