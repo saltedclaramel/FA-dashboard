@@ -3,6 +3,7 @@ import "react-step-progress-bar/styles.css";
 import ProgressBarComponent from "./ProgressBarComponent";
 import "../App.css";
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import aggressive70 from '../assets/aggressive70.png'
 
 class Dashboard extends Component{
     constructor(props){
@@ -11,7 +12,8 @@ class Dashboard extends Component{
             chosen_model: "",
             feasibility: "",
             risk_profile: "",
-            amt_to_invest: ""
+            amt_to_invest: "",
+            // img_url: ""
         }
 
     }
@@ -23,12 +25,15 @@ class Dashboard extends Component{
                 chosen_model: result.data['chosen_model'],
                 feasibility: result.data['feasibility'],
                 risk_profile: result.data['risk_profile'],
-                amt_to_invest: result.data['amt_to_invest']
+                amt_to_invest: result.data['min_monthly_payment'],
+                // img_url: 'assets/' + result.data['chosen_model'] + '.png'
             })
+            // console.log(this.state.img_url)
         })
     }
     render(){
     const { values } = this.props;
+    // const model = require(this.state.img_url)
         return(
             <div className="investor-page-layout">
                 <ProgressBarComponent percentage={100} style={{marginTop: 10}}/>
@@ -66,7 +71,8 @@ class Dashboard extends Component{
                                     <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
                                             <h6>OPTIMAL PORTFOLIO MODEL</h6>
-                                            <p>{ this.state.chosen_model }</p>
+                                            {/* <p>{ this.state.chosen_model }</p> */}
+                                            <img src={aggressive70} alt="Chosen model" style={{width: "90%"}}/>
                                         </Card.Body>
                                     </Card>
                                 </Col>
