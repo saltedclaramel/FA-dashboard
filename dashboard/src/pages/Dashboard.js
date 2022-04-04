@@ -3,7 +3,6 @@ import "react-step-progress-bar/styles.css";
 import ProgressBarComponent from "./ProgressBarComponent";
 import "../App.css";
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import aggressive70 from '../assets/aggressive70.png'
 
 class Dashboard extends Component{
     constructor(props){
@@ -13,7 +12,10 @@ class Dashboard extends Component{
             feasibility: "",
             risk_profile: "",
             amt_to_invest: "",
-            // img_url: ""
+            img_path: "",
+            model_type_path: "",
+            forecasted_returns: "",
+            model_volatility: ""
         }
 
     }
@@ -26,14 +28,16 @@ class Dashboard extends Component{
                 feasibility: result.data['feasibility'],
                 risk_profile: result.data['risk_profile'],
                 amt_to_invest: result.data['min_monthly_payment'],
-                // img_url: 'assets/' + result.data['chosen_model'] + '.png'
+                img_path: 'http://localhost:3000/images/' + result.data['chosen_model'] + '.png',
+                model_type_path: 'http://localhost:3000/images/' + result.data['chosen_model'] + 'viz.png',
+                forecasted_returns: result.data['forecasted_returns'],
+                model_volatility: result.data['model_volatility']
             })
-            // console.log(this.state.img_url)
+            // console.log(this.state.img_path)
         })
     }
     render(){
     const { values } = this.props;
-    // const model = require(this.state.img_url)
         return(
             <div className="investor-page-layout">
                 <ProgressBarComponent percentage={100} style={{marginTop: 10}}/>
@@ -70,9 +74,28 @@ class Dashboard extends Component{
                                 <Col lg="8" sm="12">
                                     <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
                                         <Card.Body style={{ padding: 40, textAlign: 'left' }}>
-                                            <h6>OPTIMAL PORTFOLIO MODEL</h6>
-                                            {/* <p>{ this.state.chosen_model }</p> */}
-                                            <img src={aggressive70} alt="Chosen model" style={{width: "90%"}}/>
+                                            <h6>Model type</h6>
+                                            <p><img src={this.state.model_type_path} alt="Best model type" style={{width: "90%"}}/></p>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                                <Col lg="4" sm="12">
+                                    <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
+                                        <Card.Body style={{ padding: 40, textAlign: 'left' }}>
+                                            <h6>Forecasted returns</h6>
+                                            <p>{ this.state.forecasted_returns }</p>
+                                            <h6>Volatility</h6>
+                                            <p>{ this.state.model_volatility }</p>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            </Row>
+                            <Row style={{ marginTop: 20 }}>
+                                <Col lg="8" sm="12">
+                                    <Card style={{ backgroundColor: '#2C2F42', height: '20em' }}>
+                                        <Card.Body style={{ padding: 40, textAlign: 'left' }}>
+                                            <h6>Optimal portfolio model</h6>
+                                            <p><img src={this.state.img_path} alt="Chosen model" style={{width: "90%"}}/></p>
                                         </Card.Body>
                                     </Card>
                                 </Col>

@@ -67,7 +67,7 @@ class Inputs extends Component{
                         </div>
                          
                         <div class="mb-3">
-                            <label for="investor_contribution" class="form-label">Investor's Expected Contribution (monthly) ie. [Monthly Contribution/Initial Investment]</label>
+                            <label for="investor_contribution" class="form-label">Investor's Expected Contribution (monthly)</label>
                             <input type="text" class="form-control" id="investor_contribution" value={ values.contribution } onChange={ this.props.handleChange('contribution') }/>
                         </div>
 
