@@ -7,6 +7,6 @@ Proof of concept application for IS453 Financial Analytics.
    run `python backend.py`
 2. To run react app
    cd to dashboard/dashboard
-   (if running for the first time): npm install
-   npm run
+   (if running for the first time): `npm install`
+   `npm run`
    
